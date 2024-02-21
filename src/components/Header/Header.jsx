@@ -13,11 +13,21 @@ const Header = () => {
 
     const handleSearch = (e) => {
         const query = e.target.value.toLowerCase();
-        setSearchQuery(query);
-        const results = productsData.filter(product =>
-            product.title.toLowerCase().includes(query)
-        );
-        setSearchResults(results);
+        if(query.length === 0){
+            setSearchQuery('');
+            setSearchResults([]);
+        }
+        else{
+            setSearchQuery(query);
+            const results = productsData.filter(product =>
+                product.title.toLowerCase().includes(query)
+            );
+            setSearchResults(results);
+        }
+    }
+
+    const toggleSearchItem = () =>{
+        SetOpenSearchbar(false)
     }
 
     const toggleLogin = () => {
@@ -66,16 +76,14 @@ const Header = () => {
                     {/* Display search results */}
                     {openSeachbar && searchResults.length > 0 && (
                         <div className="search-results">
-                            <ul>
                                 {searchResults.map(product => (
                                     <li key={product.id}>
-                                        <Link className='product-title-search' to={`/products/product-details/${encodeURIComponent(product.title)}`}>
+                                        <Link className='product-title-search' onClick={toggleSearchItem} to={`/products/product-details/${encodeURIComponent(product.title)}`}>
                                             {product.title}
                                         </Link>
                                         <hr />
                                     </li>
                                 ))}
-                            </ul>
                         </div>
                     )}
 

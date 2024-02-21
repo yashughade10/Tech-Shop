@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
 import productsData from '../../assets/productsData';
+import { Link } from 'react-router-dom';
 
 // Define custom arrow components
 const PrevArrow = (props) => {
@@ -21,7 +22,7 @@ const FeaturedProducts = () => {
         centerMode: true,
         infinite: true,
         centerPadding: "60px",
-        slidesToShow: 5,    
+        slidesToShow: 5,
         speed: 500,
         autoplay: true,
         autoplaySpeed: 2000,
@@ -40,7 +41,7 @@ const FeaturedProducts = () => {
     };
 
 
-    const featuredProduct = productsData.filter(product => product.tag).slice(0,6)
+    const featuredProduct = productsData.filter(product => product.tag).slice(0, 6)
 
     return (
         <>
@@ -50,9 +51,11 @@ const FeaturedProducts = () => {
                     {
                         featuredProduct.map(item => (
                             <div className="product-card" key={item.id}>
-                                <h3 className="product-name">{item.title}</h3>
-                                <img className="product-image" src={"src/Assets" + item.images[0]} alt="Product Image" />
-                                <p className="product-price">&#8377; {item.finalPrice} <del>&#8377;{item.originalPrice}</del></p>
+                                <Link to={`/products/product-details/${encodeURIComponent(item.title)}`} className='product-style'>
+                                    <h3 className="product-name">{item.title}</h3>
+                                    <img className="product-image" src={"src/Assets" + item.images[0]} alt="Product Image" />
+                                    <p className="product-price">&#8377; {item.finalPrice} <del>&#8377;{item.originalPrice}</del></p>
+                                </Link>
                             </div>
                         ))
                     }

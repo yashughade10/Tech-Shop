@@ -103,6 +103,17 @@ const Products = () => {
         });
     }
 
+
+     // Printing stars based on the rateCOunt
+     const printStars = (count) => {
+        const stars = [];
+        for (let i = 0; i < count; i++) {
+            stars.push(<i key={i} className="fa-solid fa-star"></i>);
+        }
+        return stars;
+    }
+
+
     const addToCart = () => {
         alert("Dont Click here ")
     }
@@ -187,11 +198,7 @@ const Products = () => {
                                 <Link to={`/products/product-details/${encodeURIComponent(product.title)}`} className='product-style'>
                                     <div>
                                         <div>
-                                            <i className="fa-solid fa-star"></i>
-                                            <i className="fa-solid fa-star"></i>
-                                            <i className="fa-solid fa-star"></i>
-                                            <i className="fa-solid fa-star"></i>
-                                            <i className="fa-solid fa-star"></i>
+                                            {printStars(product.rateCount)}
                                         </div>
                                         <h6>{product.title}</h6>
                                         <p>{product.info}</p>
