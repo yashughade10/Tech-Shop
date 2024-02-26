@@ -181,7 +181,16 @@ const Products = () => {
                             {/* <label htmlFor="range">&#8377;{ }</label><br />
                             <input type="range" name="range" id="range" color='red' /> */}
                             <label htmlFor="max-price">Max Price: &#8377;{maxPrice}</label>
-                            <input onMouseUp={filterByPriceRange} type="range" name="max-price" id="max-price" min="449" max="19990" value={maxPrice} onChange={handleMaxPriceChange} />
+                            <input 
+                            onMouseUp={filterByPriceRange} 
+                            type="range" 
+                            name="max-price" 
+                            id="max-price" 
+                            min="449" 
+                            max="19990" 
+                            value={maxPrice} 
+                            onChange={handleMaxPriceChange} 
+                            />
                             <br />
                         </div>
                     </div>
@@ -221,108 +230,3 @@ const Products = () => {
 }
 
 export default Products;
-
-
-
-
-
-// import React, { useState } from 'react';
-// import productsData from '../../assets/productsData';
-// import Advantages from '../Home/Advantages';
-// import { useNavigate, Link } from 'react-router-dom';
-
-// const Products = () => {
-//     const [selectedBrands, setSelectedBrands] = useState([]);
-//     const [products, setProducts] = useState(productsData);
-
-//     const navigate = useNavigate();
-
-//     const toggleBrandFilter = (brand) => {
-//         const updatedBrands = [...selectedBrands];
-//         const index = updatedBrands.indexOf(brand);
-//         if (index === -1) {
-//             updatedBrands.push(brand);
-//         } else {
-//             updatedBrands.splice(index, 1);
-//         }
-//         setSelectedBrands(updatedBrands);
-//         filterProducts(updatedBrands);
-//     }
-
-//     const filterProducts = (selectedBrands) => {
-//         if (selectedBrands.length === 0) {
-//             setProducts(productsData);
-//         } else {
-//             const filteredProducts = productsData.filter(product => selectedBrands.includes(product.brand));
-//             setProducts(filteredProducts);
-//         }
-//     }
-
-//     const addToCart = () => {
-//         alert("Don't Click here");
-//     }
-
-//     return (
-//         <>
-//             <section className='product-page'>
-//                 {/* Filter options */}
-//                 <div className='product-filter'>
-//                     <div className='filter-by'>
-//                         <h3>Filter By</h3>
-//                         <hr />
-//                         <div className='brands'>
-//                             <h4>Brands</h4>
-//                             <div >
-//                                 <input type="checkbox" name="jbl" id="jbl" />
-//                                 <label htmlFor="jbl" onClick={() => toggleBrandFilter('JBL')}>JBL</label><br />
-//                             </div>
-//                             <div >
-//                                 <input type="checkbox" name="boat" id="boat" />
-//                                 <label htmlFor="boat" onClick={() => toggleBrandFilter('boAt')}>boAt</label>
-//                             </div>
-//                             <div>
-//                                 <input type="checkbox" name="sony" id="sony" />
-//                                 <label htmlFor="sony" onClick={() => toggleBrandFilter('Sony')}>Sony</label>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 {/* Product cards */}
-//                 <div className='product-cards'>
-//                     {products.map(product => (
-//                         <div key={product.id}>
-//                             <Link to={`/products/product-details/${encodeURIComponent(product.title)}`}>
-//                                 <div className='product-images'>
-//                                     <img src={"src/Assets" + product.images[0]} alt={product.title} />
-//                                 </div>
-//                             </Link>
-//                             <section className='product-detail'>
-//                                 <Link to={`/products/product-details/${encodeURIComponent(product.title)}`} className='product-style'>
-//                                     <div>
-//                                         <div>
-//                                             <i className="fa-solid fa-star"></i>
-//                                             <i className="fa-solid fa-star"></i>
-//                                             <i className="fa-solid fa-star"></i>
-//                                             <i className="fa-solid fa-star"></i>
-//                                             <i className="fa-solid fa-star"></i>
-//                                         </div>
-//                                         <h6>{product.title}</h6>
-//                                         <p>{product.info}</p>
-//                                         <hr />
-//                                         <div className='price'>
-//                                             <p>&#8377;{product.finalPrice} <span>&#8377;{product.originalPrice}</span></p>
-//                                         </div>
-//                                     </div>
-//                                 </Link>
-//                                 <button className='product-add-to-cart-btn' onClick={addToCart}>Add to Cart</button>
-//                             </section>
-//                         </div>
-//                     ))}
-//                 </div>
-//             </section>
-//             <Advantages />
-//         </>
-//     );
-// }
-
-// export default Products;
