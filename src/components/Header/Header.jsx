@@ -13,11 +13,11 @@ const Header = () => {
 
     const handleSearch = (e) => {
         const query = e.target.value.toLowerCase();
-        if(query.length === 0){
+        if (query.length === 0) {
             setSearchQuery('');
             setSearchResults([]);
         }
-        else{
+        else {
             setSearchQuery(query);
             const results = productsData.filter(product =>
                 product.title.toLowerCase().includes(query)
@@ -26,7 +26,7 @@ const Header = () => {
         }
     }
 
-    const toggleSearchItem = () =>{
+    const toggleSearchItem = () => {
         SetOpenSearchbar(false)
     }
 
@@ -53,9 +53,11 @@ const Header = () => {
     return (
         <>
             <section className="header">
-                <div className='logo'>
-                    Tech-Shop
-                </div>
+                <Link to="/" className='logo-link'>
+                    <div className='logo'>
+                        Tech-Shop
+                    </div>
+                </Link>
                 <div className='nav-menu'>
 
                     {/* Searchbar */}
@@ -76,14 +78,14 @@ const Header = () => {
                     {/* Display search results */}
                     {openSeachbar && searchResults.length > 0 && (
                         <div className="search-results">
-                                {searchResults.map(product => (
-                                    <li key={product.id}>
-                                        <Link className='product-title-search' onClick={toggleSearchItem} to={`/products/product-details/${encodeURIComponent(product.title)}`}>
-                                            {product.title}
-                                        </Link>
-                                        <hr />
-                                    </li>
-                                ))}
+                            {searchResults.map(product => (
+                                <li key={product.id}>
+                                    <Link className='product-title-search' onClick={toggleSearchItem} to={`/products/product-details/${encodeURIComponent(product.title)}`}>
+                                        {product.title}
+                                    </Link>
+                                    <hr />
+                                </li>
+                            ))}
                         </div>
                     )}
 

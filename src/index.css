@@ -26,6 +26,11 @@ body {
   font-size: 25px;
 }
 
+.logo-link{
+  color: #a9afc3;
+  text-decoration: none;
+}
+
 .nav-menu {
   display: flex;
   justify-content: space-around;
@@ -37,14 +42,16 @@ body {
   margin-left: 40px;
 }
 
-.nav-menu .cart{
+.nav-menu .cart {
   color: #a9afc3;
 }
-.search-bar{
+
+.search-bar {
   position: relative;
   top: 20px;
 }
-.search-bar input{
+
+.search-bar input {
   padding: 10px;
   width: 600px;
   margin-right: 150px;
@@ -57,7 +64,8 @@ body {
   position: relative;
   top: 20px;
 }
-.search-bar span{
+
+.search-bar span {
   position: absolute;
   right: 160px;
   top: 25px;
@@ -65,22 +73,25 @@ body {
   font-size: 20px;
   cursor: pointer;
 }
-.search{
+
+.search {
   cursor: pointer;
 }
-.user-info{
+
+.user-info {
   cursor: pointer;
 }
 
 @media screen and (max-width : 1050px) and (min-width : 900px) {
-  .search-bar input{
+  .search-bar input {
     width: 350px;
     margin-left: 100px;
     margin-right: 0;
   }
 }
+
 @media screen and (max-width : 900px) {
-  .search-bar input{
+  .search-bar input {
     width: 100px;
     margin-left: 100px;
     margin-right: 0;
@@ -477,6 +488,16 @@ hr {
   margin-left: 50px;
 }
 
+/* Add this CSS to your stylesheet */
+.custom-dot {
+  /* Define styles for inactive dots */
+  background-color: gray;
+}
+
+.custom-dot.slick-active {
+  /* Define styles for active dot */
+  background-color: red;
+}
 
 @media screen and (max-width : 1024px) and (min-width : 850px) {
   .hero-banner {
@@ -590,7 +611,7 @@ hr {
     font-size: 14px;
   }
 
-  .image-container-slider{
+  .image-container-slider {
     width: 40%;
     margin-right: 200px;
   }
@@ -795,7 +816,7 @@ hr {
   display: none;
 }
 
-i{
+i {
   color: red;
   margin-right: 5px;
 }
@@ -836,34 +857,36 @@ i{
   padding: 20px 0px;
 }
 
-.product-details{
+.product-details {
   padding: 10px;
 }
 
-.product-style{
+.product-style {
   text-decoration: none;
 }
-.product-style{
+
+.product-style {
   color: gray;
 }
 
-.product-details h6{
+.product-details h6 {
   font-size: 24px;
   font-weight: 600;
   color: #a9afc3;
 }
-.product-details > p{
+
+.product-details>p {
   color: gray;
 }
 
-.price-tag{
+.price-tag {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 10px;
   color: #a9afc3;
 }
 
-.price-tag span{
+.price-tag span {
   margin-left: 100px;
 }
 
@@ -898,24 +921,25 @@ button {
   cursor: pointer;
 }
 
-.add-to-cart-btn{
+.add-to-cart-btn {
   width: 100%;
   background-color: red;
   font-size: 16px;
   color: rgb(201, 201, 201);
 }
-.browse{ 
+
+.browse {
   display: flex;
   align-items: center;
   text-align: left;
   cursor: pointer;
 }
 
-.browse:hover{
+.browse:hover {
   background-color: #292929;
 }
 
-.browse p{
+.browse p {
   font-size: 35px;
   font-weight: 250;
   line-height: 45px;
@@ -944,7 +968,8 @@ button {
     width: calc(100% - 20px);
     /* Single card in a row */
   }
-  .price-tag{
+
+  .price-tag {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -970,53 +995,61 @@ button {
 
 
 /* Services Start */
-.adv-heading{
+.adv-heading {
   font-family: "Poppins", sans-serif;
   margin-bottom: 100px;
 }
-.adv-heading h2{
+
+.adv-heading h2 {
   margin-top: 100px;
   text-align: center;
 }
-.advantages{
+
+.advantages {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   place-items: center;
   margin-top: 100px;
 }
-.each-adv{
+
+.each-adv {
   display: flex;
   align-items: center;
 }
-.adv-icons{
+
+.adv-icons {
   margin-right: 20px;
   font-size: 35px;
   color: red;
 }
 
-.adv-content div{
+.adv-content div {
   font-size: 18px;
   font-weight: 700;
   color: #a9afc3;
 }
-.adv-content p{
+
+.adv-content p {
   color: gray;
 }
 
 
 @media screen and (max-width : 1024px) and (min-width : 600px) {
-  .advantages{
+  .advantages {
     grid-template-columns: repeat(2, 1fr);
   }
-  .each-adv{
+
+  .each-adv {
     margin-bottom: 50px;
   }
 }
+
 @media screen and (max-width : 600px) {
-  .advantages{
+  .advantages {
     grid-template-columns: repeat(1, 1fr);
   }
-  .each-adv{
+
+  .each-adv {
     margin-bottom: 50px;
   }
 }
@@ -1057,50 +1090,57 @@ button {
 
 
 /* Buy Products */
-.product-page{
+.product-page {
   font-family: "Poppins", sans-serif;
   display: grid;
   grid-template-columns: 20% 80%;
   padding: 100px;
-  
+
 }
-.product-filter{
+
+.product-filter {
   background-color: #1f1f1f;
   padding: 0 20px 20px 20px;
   height: fit-content;
   /* height: 95vh; */
 }
 
-.product-filter label{
+.product-filter label {
   color: rgb(167, 167, 167);
   font-weight: 400;
   margin-left: 10px;
 }
-.sort-by li{
+
+.sort-by li {
   list-style: none;
   font-weight: 300;
   color: rgb(167, 167, 167);
   cursor: pointer;
 }
 
-.sort-by li:hover{
+.sort-by li:hover {
   color: rgb(197, 196, 196);
 }
 
 .price-range {
   color: #a9afc3;
 }
-.sort-by, .filter-by h3{
+
+.sort-by,
+.filter-by h3 {
   color: #a9afc3;
 }
-.sort-by, .filter-by h4{
+
+.sort-by,
+.filter-by h4 {
   color: #a9afc3;
 }
-#range{
+
+#range {
   background: gray;
 }
 
-i{
+i {
   color: red;
   margin-right: 5px;
 }
@@ -1141,30 +1181,32 @@ i{
   padding: 20px 0px;
 }
 
-.product-detail{
+.product-detail {
   margin: 0 10px;
 }
 
-.product-detail h6{
+.product-detail h6 {
   font-size: 24px;
   font-weight: 600;
   color: #a9afc3;
 }
-.product-detail > p{
-  color: gray;
-}
-.product-detail p{
+
+.product-detail>p {
   color: gray;
 }
 
-.price{
+.product-detail p {
+  color: gray;
+}
+
+.price {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 10px;
   color: #a9afc3;
 }
 
-.price span{
+.price span {
   margin-left: 100px;
 }
 
@@ -1199,7 +1241,7 @@ button {
   cursor: pointer;
 }
 
-.product-add-to-cart-btn{
+.product-add-to-cart-btn {
   width: 100%;
   background-color: red;
   font-size: 16px;
@@ -1229,32 +1271,32 @@ button {
 /* Media Query for responsiveness */
 @media screen and (max-width: 768px) {
   .product-page {
-      grid-template-columns: 100%;
-      padding: 20px;
+    grid-template-columns: 100%;
+    padding: 20px;
   }
 
   .product-filter {
-      height: auto;
+    height: auto;
   }
 
   .hamburger-menu {
-      display: block;
-      cursor: pointer;
+    display: block;
+    cursor: pointer;
   }
 
   .product-filter label {
-      display: block;
-      margin-top: 10px;
+    display: block;
+    margin-top: 10px;
   }
 
-  .product-cards > div {
-      width: calc(50% - 20px);
+  .product-cards>div {
+    width: calc(50% - 20px);
   }
 }
 
 @media screen and (max-width: 576px) {
-  .product-cards > div {
-      width: calc(100% - 20px);
+  .product-cards>div {
+    width: calc(100% - 20px);
   }
 }
 
@@ -1273,6 +1315,7 @@ button {
     width: calc(50% - 20px);
     /* Two cards in a row */
   }
+
   .hamburger-menu {
     display: block;
     cursor: pointer;
@@ -1292,7 +1335,8 @@ button {
     width: calc(100% - 20px);
     /* Single card in a row */
   }
-  .price{
+
+  .price {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -1307,11 +1351,13 @@ button {
 
   .product-filter {
     height: auto;
-    display: none; /* Hide the filter section by default */
+    display: none;
+    /* Hide the filter section by default */
   }
 
   .show-filter {
-    display: block; /* Show the filter section when the menu is open */
+    display: block;
+    /* Show the filter section when the menu is open */
   }
 
   .product-filter label {
@@ -1345,20 +1391,21 @@ button {
 
 /* Buy Products Page */
 
-#max-price{
+#max-price {
   accent-color: red;
   width: 90%;
 }
 
-.brands, .category input{
+.brands,
+.category input {
   accent-color: gray;
 }
 
-.latest-product:checked{
+.latest-product:checked {
   color: red !important;
 }
 
-.clear-filter-btn{
+.clear-filter-btn {
   /* display: grid;
   place-content: center; */
 
@@ -1390,7 +1437,7 @@ button {
 
 /* Login/Signup Page */
 
-.login-form{
+.login-form {
   width: 400px;
   height: fit-content;
   background-color: #1f1f1f;
@@ -1401,7 +1448,7 @@ button {
   padding: 20px 50px;
 }
 
-.login-form input{
+.login-form input {
   width: 95%;
   padding: 10px;
   margin-bottom: 20px;
@@ -1412,29 +1459,29 @@ button {
   color: white;
 }
 
-.login-subtitle{
+.login-subtitle {
   font-size: 16px;
   font-weight: 300;
   margin-bottom: 20px;
 }
 
-.login-subtitle span{
+.login-subtitle span {
   color: white;
   cursor: pointer;
 }
 
-.login-form h3{
+.login-form h3 {
   margin-bottom: 0;
 }
 
-.login-form .login-btn{
+.login-form .login-btn {
   width: 100%;
   background-color: red;
   margin-top: 10px;
   margin-bottom: 30px;
 }
 
-.login-form .form-close{
+.login-form .form-close {
   position: absolute;
   right: 0;
   top: 0;
@@ -1444,7 +1491,7 @@ button {
   border-radius: 0;
 }
 
-.login-form .login-options{
+.login-form .login-options {
   position: relative;
   top: -23px;
   left: 125px;
@@ -1452,22 +1499,24 @@ button {
   padding: 0 20px;
 }
 
-.login-btn-options button{
+.login-btn-options button {
   background-color: red;
   width: 30%;
   border-radius: 0;
   padding: 15px;
   font-size: 16px;
 }
-.login-btn-options{
+
+.login-btn-options {
   display: flex;
   justify-content: space-between;
 }
 
-.login-btn-options button:first-child{
+.login-btn-options button:first-child {
   background-color: #3b5998;
 }
-.login-btn-options button:last-child{
+
+.login-btn-options button:last-child {
   background-color: #1da1f2;
 }
 
@@ -1485,7 +1534,7 @@ button {
 
 
 /* Info */
-.productsinfo{
+.productsinfo {
   color: white;
   margin-top: 50px;
   display: grid;
@@ -1494,89 +1543,100 @@ button {
   font-family: "Poppins", sans-serif;
 }
 
-.productsinfo .productsinfo-1 img{
+.productsinfo .productsinfo-1 img {
   margin: 10px;
   border: 1px solid silver;
 }
 
-.productsinfo .productsinfo-1{
+.productsinfo .productsinfo-1 {
   padding: 0 125px 100px 20px;
   /* margin-top: -50px; */
 }
 
-.productsinfo section img{
+.productsinfo section img {
   max-width: 100%;
 }
 
-.productsinfo section h6{
+.productsinfo section h6 {
   font-size: 24px;
 }
 
-.productsinfo section div{
+.productsinfo section div {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
-.productsinfo-3{
+
+.productsinfo-3 {
   margin-left: 50px;
 }
 
-.productsinfo-3 h6{
+.productsinfo-3 h6 {
   font-weight: 700;
   color: #a9afc3;
 }
-.product-image-iteration{
+
+.product-image-iteration {
   cursor: pointer;
 }
-.productsinfo-3 .pro-info{
+
+.productsinfo-3 .pro-info {
   color: #a9afc3;
 }
-.productsinfo-3 .rating-reviews-no{
+
+.productsinfo-3 .rating-reviews-no {
   color: gray;
 }
-.productsinfo-3 .price-related-content h6{
+
+.productsinfo-3 .price-related-content h6 {
   font-size: 36px;
   color: #babfcf;
 }
-.price-content{
+
+.price-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.price-content button{
+
+.price-content button {
   margin-left: 100px;
 }
-.productsinfo-3 .price-related-content h6 del{
+
+.productsinfo-3 .price-related-content h6 del {
   font-size: 24px;
   color: gray;
   margin-left: 20px;
 }
-.discount-calculated{
+
+.discount-calculated {
   color: green;
 }
 
-.productsinfo hr{
+.productsinfo hr {
   margin-top: 30px;
 }
 
-.productsinfo-3 .product-offers-discount{
+.productsinfo-3 .product-offers-discount {
   color: #a9afc3;
   margin-top: 40px;
   margin-bottom: 15px;
 }
-.price-related-content .product-taxes{
+
+.price-related-content .product-taxes {
   color: gray;
   font-size: 14px;
 }
-.productsinfo-3 div section button{
- background-color: green;
- border: none;
- color: white;
- font-size: 18px;
- padding: 5px 15px;
- border-radius: 4px;
+
+.productsinfo-3 div section button {
+  background-color: green;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 5px 15px;
+  border-radius: 4px;
 }
 
-.border{
+.border {
   border: 1px solid silver;
   padding: 10px;
   border-radius: 5px;
@@ -1585,11 +1645,11 @@ button {
   color: #a9afc3;
 }
 
-.creditcard-emi .border{
+.creditcard-emi .border {
   font-size: 15px;
 }
 
-#cart{
+#cart {
   background-color: red;
   border: none;
   padding: 10px;
@@ -1600,26 +1660,26 @@ button {
   color: white;
 }
 
-.productsinfo section p{
+.productsinfo section p {
   font-size: 16px;
 }
 
-.details{
+.details {
   display: flex;
   justify-content: space-evenly;
 }
 
-.prddetails{
+.prddetails {
   background-color: black;
   color: white;
 }
 
-.details p{
+.details p {
   cursor: pointer;
   padding: 5px;
 }
 
-.details p:hover{
+.details p:hover {
   background-color: red;
 }
 
@@ -1652,29 +1712,32 @@ button {
 
 
 /* Search Results */
-.search-results{
+.search-results {
   position: absolute;
   top: 95px;
   left: 455px;
   width: 600px;
   background-color: #292929;
-  padding:10px;
+  padding: 10px;
 }
-.search-results li{
+
+.search-results li {
   margin-left: 2px;
   list-style: none;
 }
-.search-results li:hover{
+
+.search-results li:hover {
   background-color: #474747;
 }
-.product-title-search{
+
+.product-title-search {
   text-decoration: none;
   color: rgb(181, 179, 179);
   padding-left: inherit;
   /* border: 1px solid ; */
 }
 
-.product-title-search hr{
+.product-title-search hr {
   margin-top: -100px;
   width: 100%;
 }
@@ -1701,23 +1764,25 @@ button {
 
 
 /* Overview */
-.specification-data{
+.specification-data {
   width: 30%;
   font-family: "Poppins", sans-serif;
   margin-bottom: 100px;
 }
-.specification-data div{
+
+.specification-data div {
   display: flex;
   justify-content: space-between;
   line-height: 50px;
-  color: #a9afc3 ;
+  color: #a9afc3;
 }
 
-.dynamic-specification-data{
+.dynamic-specification-data {
   font-size: 18px;
   font-weight: 600;
 }
-.product-overview-details{
+
+.product-overview-details {
   padding: 30px 120px;
   font-family: "Poppins", sans-serif;
 }
@@ -1727,27 +1792,30 @@ button {
 
 
 
-.review-person-data{
+.review-person-data {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 10px;
 }
-.user-image{
+
+.user-image {
   background: white;
   padding: 10px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.review-data{
+.review-data {
   display: grid;
   justify-content: center;
   margin-bottom: 50px;
   margin-top: 50px;
   font-family: "Poppins", sans-serif;
 }
-.each-review{
+
+.each-review {
   margin-bottom: 30px;
 }
+
 /* Overview */

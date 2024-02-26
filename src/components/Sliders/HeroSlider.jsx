@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import productsData from '../../assets/productsData';
+import { Link } from 'react-router-dom';
 
 // Define custom arrow components
 const PrevArrow = (props) => {
@@ -42,7 +43,9 @@ const HeroSlider = () => {
                                             <h3>{item.title}</h3>
                                             <h2>{item.tagline}</h2>
                                             <p className='discounted-price'>&#8377;{item.finalPrice} <del className='original-price'>&#8377; {item.originalPrice}</del></p>
-                                            <button className="button">Shop Now</button>
+                                            <Link to={`/products/product-details/${encodeURIComponent(item.title)}`} className='product-style'>
+                                                <button className="button">Shop Now</button>
+                                            </Link>
                                         </div>
                                         <div className="image-container-slider">
                                             <img className="image" src={"src/Assets" + item.images[0]} alt="Image" />
