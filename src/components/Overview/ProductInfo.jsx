@@ -58,7 +58,7 @@ const ProductInfo = () => {
                         <div className='price-content'>
                             <section className='price-related-content'>
                                 <h6>&#8377;{product.finalPrice} <del>&#8377;{product.originalPrice}</del></h6>
-                                <p className='discount-calculated'>You save: ({discount(product.finalPrice, product.originalPrice)} %)</p>
+                                <p className='discount-calculated'>You save: &#8377;{product.originalPrice-product.finalPrice} ({discount(product.finalPrice, product.originalPrice)} %)</p>
                                 <p className='product-taxes'>(Inclusive of all Taxes)</p>
                             </section>
                             <section>

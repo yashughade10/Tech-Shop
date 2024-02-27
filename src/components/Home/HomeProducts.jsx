@@ -8,6 +8,7 @@ const Products = () => {
 
     const [products, setProducts] = useState(productsData);
     const [isFilterApplied, setIsFilterApplied] = useState(false);
+    const [activeTab, setActiveTab] = useState('specifications');
 
     const topProducts = productsData.slice(0, 11)
     const navigate = useNavigate();
@@ -20,9 +21,10 @@ const Products = () => {
     const earphonePriceProduct = productsData.filter(product => product.category == 'Earphones');
     const neckbandPriceProduct = productsData.filter(product => product.category == 'Neckbands');
 
-    const toggleCategoryFilter = (filter) => {
+    const toggleCategoryFilter = (filter, category) => {
         setProducts(filter);
-        setIsFilterApplied(true)
+        setIsFilterApplied(true);
+        setActiveTab(category)
     }
 
     // Printing stars based on the rateCOunt
@@ -34,6 +36,14 @@ const Products = () => {
         return stars;
     }
 
+    // limit the text
+    const limitText = (text, maxLength) => {
+        if (text.length > maxLength) {
+            return text.slice(0, maxLength) + '...';
+        }
+        return text;
+    };
+
     const browseProducts = () => {
         navigate('/products')
     }
@@ -43,11 +53,11 @@ const Products = () => {
             <h2>Top Products</h2>
             <section className='topproducts-1' id='topproducts-1'>
 
-                <button onClick={() => toggleCategoryFilter(allProduct)}>All</button>
-                <button onClick={() => toggleCategoryFilter(headphoneProduct)}>Headphones</button>
-                <button onClick={() => toggleCategoryFilter(earbudsProduct)}>Earbuds</button>
-                <button onClick={() => toggleCategoryFilter(earphonePriceProduct)}>Earphones</button>
-                <button onClick={() => toggleCategoryFilter(neckbandPriceProduct)}>Neckbands</button>
+                <button onClick={() => toggleCategoryFilter(allProduct, "all")} style={{ backgroundColor: activeTab === 'all' ? 'red' : 'black' }}>All</button>
+                <button onClick={() => toggleCategoryFilter(headphoneProduct, "Headphones")} style={{ backgroundColor: activeTab === 'Headphones' ? 'red' : 'black' }}>Headphones</button>
+                <button onClick={() => toggleCategoryFilter(earbudsProduct, "Earbuds")} style={{ backgroundColor: activeTab === 'Earbuds' ? 'red' : 'black' }}>Earbuds</button>
+                <button onClick={() => toggleCategoryFilter(earphonePriceProduct, "Earphones")} style={{ backgroundColor: activeTab === 'Earphones' ? 'red' : 'black' }}>Earphones</button>
+                <button onClick={() => toggleCategoryFilter(neckbandPriceProduct, "Neckbands")} style={{ backgroundColor: activeTab === 'Neckbands' ? 'red' : 'black' }}>Neckbands</button>
             </section>
             <div className='topproducts-2'>
                 {products.map(product => (
@@ -62,8 +72,8 @@ const Products = () => {
                                 <div>
                                     {printStars(product.rateCount)}
                                 </div>
-                                <h6>{product.title}</h6>
-                                <p>{product.info}</p>
+                                <h6>{limitText(product.title, 19)}</h6>
+                                <p>{limitText(product.info, 30)}</p>
                                 <hr />
                                 <div className='price-tag'>
                                     <p>&#8377;{product.finalPrice} <span className='original'>&#8377;{product.originalPrice}</span></p>

@@ -113,6 +113,13 @@ const Products = () => {
         return stars;
     }
 
+    // limit the text
+    const limitText = (text, maxLength) => {
+        if (text.length > maxLength) {
+            return text.slice(0, maxLength) + '...';
+        }
+        return text;
+    };
 
     const addToCart = () => {
         alert("Dont Click here ")
@@ -209,8 +216,8 @@ const Products = () => {
                                         <div>
                                             {printStars(product.rateCount)}
                                         </div>
-                                        <h6>{product.title}</h6>
-                                        <p>{product.info}</p>
+                                        <h6>{limitText(product.title, 19)}</h6>
+                                        <p>{limitText(product.info, 30)}</p>
                                         <hr />
                                         <div className='price'>
                                             <p>&#8377;{product.finalPrice} <span>&#8377;{product.originalPrice}</span></p>
