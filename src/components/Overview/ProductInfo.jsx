@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import productsData from '../../assets/productsData';
 import Overview from './Overview';
+import { useDispatch } from 'react-redux';
+import { addtocart } from '../Action/Action';
 
 const ProductInfo = () => {
     const { productInfo } = useParams();
@@ -30,6 +32,20 @@ const ProductInfo = () => {
         let discountPercentage = (discount / originalPrice) * 100
 
         return discount, discountPercentage.toFixed(2)
+    }
+
+
+    // Add to cart
+    let dispatch =useDispatch()
+
+    function addtocartitem(product){
+        dispatch(addtocart(product))
+        const buttonId = `cart-style-${product.id}`;
+        const button = document.getElementById(buttonId);
+        if (button) {
+            button.style.backgroundColor ="green";
+            button.innerHTML = "Added";
+        }
     }
 
     return (
@@ -72,7 +88,7 @@ const ProductInfo = () => {
                             <p className="border">Pay Later and Avail Cashback</p>
                         </div>
                         <hr />
-                        <button id="cart" >Add to Cart</button>
+                        <button id="cart" onClick={()=> addtocartitem(product)} >Add to Cart</button>
                     </section>
                 </div>
             )}

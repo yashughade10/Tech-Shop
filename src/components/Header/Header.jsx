@@ -2,8 +2,11 @@ import { Search, ShoppingCart, User } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import productsData from '../../assets/productsData';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+
+    const cartcount = useSelector( state => state.cartcount )
 
     const [openSeachbar, SetOpenSearchbar] = useState(false);
     const [isLogin, setIsLogin] = useState(false);
@@ -148,6 +151,10 @@ const Header = () => {
                     <li>
                         <Link to='/cart' className='cart'>
                             <ShoppingCart />
+                            {
+                                cartcount == 0 ? <div></div> : 
+                                <sup>{cartcount}</sup>
+                            }
                         </Link>
                     </li>
                     <li>

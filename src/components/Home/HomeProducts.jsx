@@ -3,6 +3,8 @@ import productsData from '../../assets/productsData';
 import { MoveRight, Star } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addtocart } from '../Action/Action';
 
 const Products = () => {
 
@@ -44,6 +46,19 @@ const Products = () => {
         return text;
     };
 
+    // Add to cart
+    let dispatch =useDispatch()
+
+    function addtocartitem(product){
+        dispatch(addtocart(product))
+        const buttonId = `cart-style-${product.id}`;
+        const button = document.getElementById(buttonId);
+        if (button) {
+            button.style.backgroundColor ="green";
+            button.innerHTML = "Added";
+        }
+    }
+
     const browseProducts = () => {
         navigate('/products')
     }
@@ -79,7 +94,7 @@ const Products = () => {
                                     <p>&#8377;{product.finalPrice} <span className='original'>&#8377;{product.originalPrice}</span></p>
                                 </div>
                             </Link>
-                            <button className='add-to-cart-btn'>Add to Cart</button>
+                            <button className='add-to-cart-btn' onClick={()=> addtocartitem(product)}>Add to Cart</button>
                         </section>
                     </div>
                 ))

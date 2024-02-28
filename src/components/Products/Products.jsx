@@ -4,6 +4,8 @@ import { MoveRight, Star } from 'lucide-react';
 import Advantages from '../Home/Advantages';
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addtocart } from '../Action/Action';
 
 
 const Products = () => {
@@ -121,9 +123,20 @@ const Products = () => {
         return text;
     };
 
-    const addToCart = () => {
-        alert("Dont Click here ")
+    // Add to cart
+    let dispatch =useDispatch()
+
+    function addtocartitem(product){
+        dispatch(addtocart(product))
+        const buttonId = `cart-style-${product.id}`;
+        const button = document.getElementById(buttonId);
+        if (button) {
+            button.style.backgroundColor ="green";
+            button.innerHTML = "Added";
+        }
     }
+    
+
 
     return (
         <>
@@ -224,7 +237,7 @@ const Products = () => {
                                         </div>
                                     </div>
                                 </Link>
-                                <button className='product-add-to-cart-btn' onClick={addToCart}>Add to Cart</button>
+                                <button className='product-add-to-cart-btn' onClick={()=> addtocartitem(product)}>Add to Cart</button>
                             </section>
                         </div>
                     ))
