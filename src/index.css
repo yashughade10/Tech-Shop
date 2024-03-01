@@ -1156,6 +1156,11 @@ i {
   gap: 20px;
   justify-content: center;
   color: white;
+  max-height: fit-content;
+}
+
+.card-length{
+  max-height: 520px;
 }
 
 .product-cards>div {
@@ -1251,6 +1256,10 @@ button {
   background-color: red;
   font-size: 16px;
   color: rgb(201, 201, 201);
+  transition: .1s;
+}
+.product-add-to-cart-btn:active{
+  background-color: green;
 }
 
 /* Add styles for mobile menu */

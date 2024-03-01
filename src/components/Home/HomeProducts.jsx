@@ -94,7 +94,7 @@ const Products = () => {
                                     <p>&#8377;{product.finalPrice} <span className='original'>&#8377;{product.originalPrice}</span></p>
                                 </div>
                             </Link>
-                            <button className='add-to-cart-btn' onClick={()=> addtocartitem(product)}>Add to Cart</button>
+                            <button className='add-to-cart-btn product-add-to-cart-btn' onClick={()=> addtocartitem(product)}>Add to Cart</button>
                         </section>
                     </div>
                 ))

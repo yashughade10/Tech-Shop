@@ -6,7 +6,10 @@ export const addtocart = (product) => ({
 
 export const deletecart = (product) => ({
     type: "Delete_cart",
-    payload: product
+    payload: {
+        product: product,
+        quantity: product.quantity // Include the quantity of the product
+    }
 })
 
 export const increaseQuantity = (product) => ({

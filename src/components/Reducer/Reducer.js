@@ -28,11 +28,11 @@ const reducer = (state = initialstate, action) => {
             }
 
         case "Delete_cart":
-            const updatedCart = state.cart.filter(item => item !== action.payload);
+            const updatedCart = state.cart.filter(item => item !== action.payload.product);
             return {
                 ...state,
                 cart: updatedCart,
-                cartcount: state.cartcount - 1 // Decrement cart count
+                cartcount: state.cartcount - action.payload.quantity // Decrement cart count by the quantity of the product being deleted
             };
 
         case "INCREASE_QUANTITY":

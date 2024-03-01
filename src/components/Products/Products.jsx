@@ -217,7 +217,7 @@ const Products = () => {
                 </div>
                 <div className='product-cards'>
                     {products.map(product => (
-                        <div key={product.id}>
+                        <div key={product.id} className='card-length'>
                             <Link to={`/products/product-details/${encodeURIComponent(product.title)}`}>
                                 <div className='product-images'>
                                     <img src={"src/Assets" + product.images[0]} alt={product.title} />
