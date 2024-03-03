@@ -220,7 +220,7 @@ const Products = () => {
                         <div key={product.id} className='card-length'>
                             <Link to={`/products/product-details/${encodeURIComponent(product.title)}`}>
                                 <div className='product-images'>
-                                    <img src={"src/Assets" + product.images[0]} alt={product.title} />
+                                    <img src={"/src/Assets" + product.images[0]} alt={product.title} />
                                 </div>
                             </Link>
                             <section className='product-detail'>
