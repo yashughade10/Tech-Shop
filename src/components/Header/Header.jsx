@@ -1,7 +1,7 @@
 import { Search, ShoppingCart, User } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import productsData from '../../assets/productsData';
+import productsData from '../../../public/assets/productsData';
 import { useSelector } from 'react-redux';
 
 const Header = () => {

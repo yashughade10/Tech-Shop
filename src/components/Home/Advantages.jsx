@@ -1,5 +1,5 @@
 import React from 'react';
-import servicesData from '../../assets/servicesData'
+import servicesData from '../../../public/assets/servicesData'
 
 const Advantages = () => {
     return (

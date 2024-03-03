@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import productsData from '../../assets/productsData';
+import productsData from '../../../public/assets/productsData';
 import Overview from './Overview';
 import { useDispatch } from 'react-redux';
 import { addtocart } from '../Action/Action';
@@ -13,7 +13,7 @@ const ProductInfo = () => {
 
     // Images rendering 
     const showImages = (index) => {
-        document.getElementById('product-imgs').src = `/src/assets/${product.images[index]}`;
+        document.getElementById('product-imgs').src = `/assets/${product.images[index]}`;
     }
 
     // Printing stars based on the rateCOunt
@@ -56,7 +56,7 @@ const ProductInfo = () => {
                         {product.images.map((image, index) => (
                             <img
                                 onClick={() => showImages(index)}
-                                src={`/src/assets/${image}`}
+                                src={`/assets${image}`}
                                 alt="product-image"
                                 key={index}
                                 className='product-image-iteration'
@@ -64,7 +64,7 @@ const ProductInfo = () => {
                         ))}
                     </section>
                     <section>
-                        <img id='product-imgs' src={`/src/assets/${product.images[0]}`} alt="" />
+                        <img id='product-imgs' src={`/assets/${product.images[0]}`} alt="" />
                     </section>
                     <section className="productsinfo-3">
                         <h6>{product.title}</h6>

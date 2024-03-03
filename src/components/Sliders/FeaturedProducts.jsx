@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
-import productsData from '../../assets/productsData';
+import productsData from '../../../public/assets/productsData';
 import { Link } from 'react-router-dom';
 
 // Define custom arrow components
@@ -53,7 +53,7 @@ const FeaturedProducts = () => {
                             <div className="product-card" key={item.id}>
                                 <Link to={`/products/product-details/${encodeURIComponent(item.title)}`} className='product-style'>
                                     <h3 className="product-name">{item.title}</h3>
-                                    <img className="product-image" src={"src/Assets" + item.images[0]} alt="Product Image" />
+                                    <img className="product-image" src={"/assets" + item.images[0]} alt="Product Image" />
                                     <p className="product-price">&#8377; {item.finalPrice} <del>&#8377;{item.originalPrice}</del></p>
                                 </Link>
                             </div>

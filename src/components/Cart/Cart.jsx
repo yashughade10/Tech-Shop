@@ -76,7 +76,7 @@ function Cart() {
                         {cart.map(product => (
                             <div className="cart-card-item">
                                 <section className="cart-1" key={product.id}>
-                                    <img src={"src/Assets" + product.images[0]} alt="" />
+                                    <img src={"/assets" + product.images[0]} alt="" />
                                     <div className="product-info-cart">
                                         <h3>{product.title + " " + product.info}</h3>
                                         <p >${calculateItemfinalPrice(product)} <del>${calculateItemorPrice(product)}</del></p>

@@ -1,5 +1,5 @@
 import React from 'react';
-import productsData from '../../assets/productsData';
+import productsData from '../../../public/assets/productsData';
 import { MoveRight, Star } from 'lucide-react';
 import Advantages from '../Home/Advantages';
 import { useNavigate, Link } from 'react-router-dom';
@@ -220,7 +220,7 @@ const Products = () => {
                         <div key={product.id} className='card-length'>
                             <Link to={`/products/product-details/${encodeURIComponent(product.title)}`}>
                                 <div className='product-images'>
-                                    <img src={"/src/Assets" + product.images[0]} alt={product.title} />
+                                    <img src={"/assets" + product.images[0]} alt={product.title} />
                                 </div>
                             </Link>
                             <section className='product-detail'>

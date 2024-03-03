@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import productsData from '../../assets/productsData';
+import productsData from '../../../public/assets/productsData';
 import { User } from 'lucide-react';
-import reviewsData from '../../assets/reviewsData';
+import reviewsData from '../../../public/assets/reviewsData';
 
 const Overview = ({ product }) => {
 

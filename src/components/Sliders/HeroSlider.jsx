@@ -2,7 +2,7 @@ import React from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import productsData from '../../assets/productsData';
+import productsData from '../../../public/assets/productsData';
 import { Link } from 'react-router-dom';
 
 // Define custom arrow components
@@ -48,7 +48,7 @@ const HeroSlider = () => {
                                             </Link>
                                         </div>
                                         <div className="image-container-slider">
-                                            <img className="image" src={"src/Assets" + item.images[0]} alt="Image" />
+                                            <img className="image" src={"/assets" + item.images[0]} alt="Image" />
                                         </div>
                                     </div>
                                 </div>
